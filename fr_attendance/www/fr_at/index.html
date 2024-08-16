@@ -1,0 +1,109 @@
+{% if error %}
+<b>{{error}}</b>
+{% endif %}
+
+<form method="post" action="" class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>FR Attendance Tool</legend>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="emp_id">ID</label>  
+  <div class="col-md-4">
+  <input id="emp_id" value="{{emp_id}}" name="emp_id" type="text" placeholder="Name" class="form-control input-md" required="" readonly>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="emp_id">Employee</label>  
+  <div class="col-md-4">
+  <input id="emp" value="{{emp}}" name="emp" type="text" placeholder="Name" class="form-control input-md" required="" readonly>
+    
+  </div>
+</div>
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="device_name">Device Tracking</label>  
+  <div class="col-md-4">
+  <input id="device_name" name="device_name" type="text" placeholder="device_name" class="form-control input-md" required="" readonly>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="location">Location</label>  
+  <div class="col-md-4">
+  <input id="location" name="location" type="text" placeholder="location" class="form-control input-md" required="" readonly>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="ip_address">IP Address</label>  
+  <div class="col-md-4">
+  <input id="ip_address" name="ip_address" type="text" placeholder="ip_address" class="form-control input-md" required="" readonly>
+  </div>
+</div>
+
+<!-- Video -->
+<div class="form-group">
+<video playsinline></video>
+</div>
+
+<!--
+<div class="form-group">
+<div class="col-md-4">
+<button class="btn btn-primary" id='pro_btn' type="submit">Proceed</button> 
+</div>
+</div>
+-->
+
+<!-- Button 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="get_device_id"></label>
+  <div class="col-md-4">
+    <button id="get_device_id" type="button" onclick="getDevice()" name="get_device_id" class="btn btn-primary">Get Device ID</button>
+  </div>
+</div>
+
+<!-- Button 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="get_location"></label>
+  <div class="col-md-4">
+    <button id="get_location" type="button" onclick="getLocation()" name="get_location" class="btn btn-primary">Get Location</button>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="get_location"></label>
+  <div class="col-md-4">
+    <!--<button id="iivideo" type="button" onclick="ivideo()" name="iivideo" class="btn btn-primary">Take a snapshot</button> -->
+     <button id="checkin" type="button" onclick="download('Check In')" name="checkin" class="btn btn-primary">Check In</button>
+     <button id="checkout" type="button" onclick="download('Check Out')" name="checkout" class="btn btn-primary">Check Out</button>
+     <div id='wait_div'>Please Wait....</div>
+  </div>
+</div>
+
+<!-- Button 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="get_location"></label>
+  <div class="col-md-4">
+    <button id="itakeASnap" type="button" onclick="download()" name="itakeASnap" class="btn btn-primary">Take a snapshot</button>
+  </div>
+</div>
+
+-->
+
+
+    
+</fieldset>
+</form>

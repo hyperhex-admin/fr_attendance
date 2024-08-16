@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include fr_attendance *.css
+recursive-include fr_attendance *.csv
+recursive-include fr_attendance *.html
+recursive-include fr_attendance *.ico
+recursive-include fr_attendance *.js
+recursive-include fr_attendance *.json
+recursive-include fr_attendance *.md
+recursive-include fr_attendance *.png
+recursive-include fr_attendance *.py
+recursive-include fr_attendance *.svg
+recursive-include fr_attendance *.txt
+recursive-exclude fr_attendance *.pyc

@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "autoname": "FRAL.#####",
+ "creation": "2021-09-03 14:50:36.730060",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "time",
+  "company",
+  "employee",
+  "fr_employee",
+  "ip_address",
+  "face_image",
+  "matched",
+  "location",
+  "device_name",
+  "type"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "fr_employee",
+   "fieldtype": "Link",
+   "label": "FR Employee",
+   "options": "FR Employee"
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP Address"
+  },
+  {
+   "fieldname": "face_image",
+   "fieldtype": "Attach Image",
+   "label": "Face Image"
+  },
+  {
+   "default": "0",
+   "fieldname": "matched",
+   "fieldtype": "Check",
+   "label": "Matched"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "location"
+  },
+  {
+   "fieldname": "device_name",
+   "fieldtype": "Small Text",
+   "label": "Device Name"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Check In\nCheck Out"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-09-06 18:11:25.251006",
+ "modified_by": "Administrator",
+ "module": "FR Attendance",
+ "name": "FR Attendance Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
