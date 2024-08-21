@@ -7,15 +7,16 @@ from frappe.utils.file_manager import save_file, get_file_path
 import urllib.request
 
 
-
+@frappe.whitelist(allow_guest = True)
 def compare_faces(file1, file2):
-    print(file1, file2)
+    # print(file1, file2)
     
     # Load the jpg files into numpy arrays
     
     # image1 = fr.load_image_file(file1)
     # image2 = fr.load_image_file(file2)
     try:
+
         image1 = fr.load_image_file(urllib.request.urlopen(file1))
         image2 = fr.load_image_file(urllib.request.urlopen(file2))
         
@@ -29,6 +30,7 @@ def compare_faces(file1, file2):
     except IndexError:
         return False
 
+@frappe.whitelist(allow_guest = True)
 def get_fr_emp(emp_id):
     emp = frappe.get_doc('FR Employee', emp_id)
     return emp.employee
@@ -49,8 +51,8 @@ def store_image(emp_id, image, device_name, ip_address, location, type):
 #             frappe.throw("This IP is not allowed!")
 #             return
 
-        if check_today_log(emp_id, type):
-            return False    
+        # if check_today_log(emp_id, type):
+        #     return False    
 
         log_doc = frappe.new_doc('FR Attendance Log')
         log_doc.date = nowdate()
@@ -76,7 +78,8 @@ def store_image(emp_id, image, device_name, ip_address, location, type):
             return False    
     except Exception as e:
         frappe.throw(str(e))
-
+        
+@frappe.whitelist(allow_guest = True)
 def match_image(fr_emp_doc, new_image_doc):
     url_new_img = None
     emp_img_url = None
@@ -85,6 +88,7 @@ def match_image(fr_emp_doc, new_image_doc):
         #found entry
         for row in file_list1:
             url_new_img=frappe.utils.get_url()+row.file_url
+            print("A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",url_new_img)
             a = frappe.get_site_path('private', 'files', row.name)
 
     
@@ -95,6 +99,7 @@ def match_image(fr_emp_doc, new_image_doc):
         #found entry
         for row in file_list:
             emp_img_url=frappe.utils.get_url()+row.file_url
+            print("B!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",emp_img_url)
             b = frappe.get_site_path('private', 'files', row.name)
 
 
